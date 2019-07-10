@@ -28,6 +28,8 @@ func main() {
 
 	d := gomail.NewDialer(config.Mailserver.SMTPGate, config.Mailserver.SMTPPort, config.Authentication.Login, config.Authentication.Password)
 
+	logOperation(config.Mailserver.FromMail, *mailsFlag, *attachmentFlag, *subjectFlag, config.Mailserver.SMTPGate, config.Mailserver.SMTPPort, *configFlag, "logs/log.txt")
+
 	if err := d.DialAndSend(msg); err != nil {
 		panic(err)
 	}
