@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-// Config struct which definies configuration needed for sending mails
+//config struct which definies configuration needed for sending mails
 type config struct {
 	Mailserver struct {
 		SMTPGate string `json:"smtp_gate"`
@@ -20,9 +20,12 @@ type config struct {
 	} `json:"authentication"`
 }
 
-func readConfig(configJSON string) Config {
+/*readConfig takes string path to config.json file
+which is readed and unmarshaled to config struct
+and then is returned*/
+func readConfig(configJSON string) config {
 
-	var config Config
+	var config config
 
 	//Reading JSON
 	// Open our jsonFile
@@ -34,6 +37,7 @@ func readConfig(configJSON string) Config {
 	}
 	defer jsonFile.Close()
 
+	// reading bytes
 	byteValue, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
 		fmt.Println(err)
