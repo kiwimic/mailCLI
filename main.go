@@ -10,6 +10,7 @@ import (
 
 func main() {
 
+	//bodyFlag
 	mailsFlag := flag.String("to", "", "mail recipient, if multiple recipients use comma as separator ','")
 	attachmentFlag := flag.String("attach", "", "files you want to attach, if multiple files use comma as separator ','")
 	subjectFlag := flag.String("subj", "Automated mail sended from mailCLI app", "subject of mail message")
