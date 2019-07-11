@@ -23,7 +23,6 @@ func main() {
 	//}
 
 	msg := gomail.NewMessage()
-	msg.SetHeader("From", "sendmailrmichalsiwik@gmail.com")
 
 	addRecipients(*mailsFlag, msg)
 	addAttachments(*attachmentFlag, msg)
@@ -40,6 +39,8 @@ func main() {
 
 	config := readConfig(configPath)
 	logPath := os.Getenv("mail_log")
+
+	msg.SetHeader("From", config.Mailserver.FromMail)
 
 	//fmt.Println("Config path: ", configPath)
 	//fmt.Println("Log path: ", logPath)
