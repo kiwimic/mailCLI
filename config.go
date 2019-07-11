@@ -8,7 +8,7 @@ import (
 )
 
 // Config struct which definies configuration needed for sending mails
-type Config struct {
+type config struct {
 	Mailserver struct {
 		SMTPGate string `json:"smtp_gate"`
 		SMTPPort int    `json:"smtp_port"`
@@ -45,5 +45,3 @@ func readConfig(configJSON string) Config {
 
 	return config
 }
-
-
