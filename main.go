@@ -14,13 +14,8 @@ func main() {
 	mailsFlag := flag.String("to", "", "mail recipient, if multiple recipients use comma as separator ','")
 	attachmentFlag := flag.String("attach", "", "files you want to attach, if multiple files use comma as separator ','")
 	subjectFlag := flag.String("subj", "Automated mail sended from mailCLI app", "subject of mail message")
-	configFlag := flag.String("config", "", "location of json config file")
-	//checkConfFlag := flag.Bool("check", false, "This command checks if path to config and log have existing files")
+	configFlag := flag.String("config", "", "location of json config file (only if you want to pass other config file than this from 'mail_config' env var")
 	flag.Parse()
-
-	//if *checkConfFlag {
-	//	fmt.Println(checkConfiguration(*configFlag, "C:/goworkspace/src/github.com/mailCLI/logs/log.txt"))
-	//}
 
 	msg := gomail.NewMessage()
 
