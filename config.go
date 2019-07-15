@@ -20,9 +20,9 @@ type config struct {
 	} `json:"authentication"`
 }
 
-/*readConfig takes string path to config.json file
-which is readed and unmarshaled to config struct
-and then is returned*/
+//readConfig takes string path to config.json file
+//which is readed and unmarshaled to config struct
+//and then is returned
 func readConfig(configJSON string) config {
 
 	var config config
