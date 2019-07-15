@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	gomail "gopkg.in/gomail.v2"
+	gomail "gopkg.in/mail.v2"
 )
 
 func addRecipients(mailString string, msg *gomail.Message) {

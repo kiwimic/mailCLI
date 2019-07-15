@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	gomail "gopkg.in/gomail.v2"
+	gomail "gopkg.in/mail.v2"
 )
 
 func main() {
