@@ -17,12 +17,16 @@ func isFlagPassed(name string) bool {
 	return found
 }
 
+//fileExists right now it's not perfect and need some improvment like
+// right use of os.Stat but i guess it's work fine right now
 func fileExists(name string) bool {
 
-	_, err := os.Open(name)
+	temp, err := os.Open(name)
+	defer temp.Close()
 	if err != nil {
 		return false
 	}
+
 	return true
 }
 
