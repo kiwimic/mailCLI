@@ -20,6 +20,7 @@ func addRecipients(mailString string, msg *gomail.Message) {
 
 	if mailString == "" {
 		fmt.Println("You have not added any mail addresss")
+		os.Exit(1)
 	} else {
 		msg.SetHeader("To", addresses...)
 	}
